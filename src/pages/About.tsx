@@ -1,5 +1,7 @@
 import React from 'react';
-import { History, Target, Award, Users, Building2, Globe, BookOpen, Microscope, Calendar, ArrowRight } from 'lucide-react';
+import { History, Target, Award, Users, Building2, Globe, BookOpen, Microscope, Calendar, ArrowRight, MapPin, Languages, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { departments } from '../data/departments';
 
 const About = () => {
   const milestones = [
@@ -62,58 +64,6 @@ const About = () => {
     }
   ];
 
-  const departments = [
-    {
-      name: "Ethnologie",
-      head: "Prof. Dr. Sarah Weber",
-      focus: "Kulturelle Vielfalt und soziale Strukturen",
-      projects: 4,
-      staff: 6
-    },
-    {
-      name: "Kultur- und Religionsgeschichte",
-      head: "Prof. Dr. Priya Sharma",
-      focus: "Religiöse Traditionen und kulturelle Entwicklungen",
-      projects: 5,
-      staff: 7
-    },
-    {
-      name: "Entwicklungsökonomie",
-      head: "Prof. Dr. Klaus Müller",
-      focus: "Wirtschaftliche Entwicklungsprozesse",
-      projects: 4,
-      staff: 6
-    },
-    {
-      name: "Geographie",
-      head: "Prof. Dr. Michael Fischer",
-      focus: "Physische und Humangeographie",
-      projects: 3,
-      staff: 4
-    },
-    {
-      name: "Geschichte",
-      head: "Prof. Dr. Maria Schmidt",
-      focus: "Historische Entwicklungen von der Antike bis heute",
-      projects: 3,
-      staff: 5
-    },
-    {
-      name: "Neusprachliche Südasienstudien",
-      head: "Prof. Dr. Rajesh Patel",
-      focus: "Moderne Sprachen und Literatur",
-      projects: 2,
-      staff: 5
-    },
-    {
-      name: "Politikwissenschaft",
-      head: "Prof. Dr. Thomas Hoffmann",
-      focus: "Politische Systeme und Governance",
-      projects: 3,
-      staff: 6
-    }
-  ];
-
   const achievements = [
     {
       year: "2024",
@@ -132,9 +82,36 @@ const About = () => {
     }
   ];
 
+  const getIconComponent = (iconName: string) => {
+    const iconMap: { [key: string]: React.ComponentType<any> } = {
+      Users,
+      BookOpen,
+      Globe,
+      MapPin,
+      History,
+      Languages,
+      Heart
+    };
+    const IconComponent = iconMap[iconName] || Users;
+    return <IconComponent className="w-8 h-8" />;
+  };
+
+  const getColorClasses = (color: string) => {
+    const colorMap: { [key: string]: string } = {
+      red: 'text-red-600',
+      purple: 'text-purple-600',
+      green: 'text-green-600',
+      orange: 'text-orange-600',
+      yellow: 'text-yellow-600',
+      indigo: 'text-indigo-600',
+      teal: 'text-teal-600'
+    };
+    return colorMap[color] || 'text-red-600';
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Updated to match corporate design */}
+      {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-900 to-red-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -149,7 +126,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Institute Overview - Enhanced statistics */}
+      {/* Institute Overview */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -183,8 +160,44 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Statement - Enhanced with visual elements */}
+      {/* Departments Section - Moved up */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Unsere Abteilungen
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Das SAI ist in sieben spezialisierte Abteilungen gegliedert, die eng zusammenarbeiten
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {departments.map((department, index) => (
+              <Link
+                key={index}
+                to={`/institut/${department.id}`}
+                className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className={`mb-4 group-hover:scale-110 transition-transform duration-300 ${getColorClasses(department.color)}`}>
+                  {getIconComponent(department.icon)}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                  {department.name}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">{department.description}</p>
+                
+                <div className="mt-4 flex items-center text-red-600 group-hover:text-red-700 font-semibold text-sm">
+                  Mehr erfahren
+                  <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -265,8 +278,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Values - Enhanced design */}
-      <section className="py-16 bg-white">
+      {/* Core Values */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -278,7 +291,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {coreValues.map((value, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-center mb-4">
                   {value.icon}
                   <h3 className="text-xl font-bold text-gray-900 ml-3">{value.title}</h3>
@@ -298,8 +311,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* History Timeline - Enhanced with more milestones */}
-      <section className="py-16 bg-gray-50">
+      {/* History Timeline */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <History className="w-12 h-12 text-red-600 mx-auto mb-4" />
@@ -311,21 +324,19 @@ const About = () => {
             </p>
           </div>
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-red-200"></div>
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   <div className={`flex-1 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className={`bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                    <div className={`bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                       <div className="text-2xl font-bold text-red-600 mb-2">{milestone.year}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{milestone.title}</h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
                   
-                  {/* Timeline dot */}
                   <div className="w-4 h-4 bg-red-600 rounded-full border-4 border-white shadow-md z-10"></div>
                   
                   <div className="flex-1"></div>
@@ -336,43 +347,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Departments - Enhanced with leadership info */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Unsere Abteilungen
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Das SAI ist in sieben spezialisierte Abteilungen gegliedert, die eng zusammenarbeiten
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {departments.map((department, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{department.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{department.focus}</p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Leitung:</span>
-                    <span className="font-medium text-gray-900">{department.head}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Projekte:</span>
-                    <span className="font-medium text-gray-900">{department.projects}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Mitarbeiter:</span>
-                    <span className="font-medium text-gray-900">{department.staff}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Achievements - New section */}
+      {/* Recent Achievements */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -399,7 +374,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Call to Action - Enhanced */}
+      {/* Call to Action */}
       <section className="py-16 bg-red-900 text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -409,27 +384,27 @@ const About = () => {
             Erfahren Sie mehr über unsere Forschung, Studienprogramme und Möglichkeiten zur Zusammenarbeit
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <a
-              href="/forschung"
+            <Link
+              to="/forschung"
               className="bg-white text-red-900 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors inline-flex items-center justify-center"
             >
               Unsere Forschung
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <a
-              href="/studieren-am-sai"
+            </Link>
+            <Link
+              to="/studieren-am-sai"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-900 transition-colors inline-flex items-center justify-center"
             >
               Studienprogramme
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <a
-              href="/kontakt"
+            </Link>
+            <Link
+              to="/kontakt"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-900 transition-colors inline-flex items-center justify-center"
             >
               Kontakt
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
