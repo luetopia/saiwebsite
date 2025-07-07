@@ -30,8 +30,6 @@ const Header = () => {
             <a href="https://www.uni-heidelberg.de" className="hover:text-red-200 transition-colors">
               Universität Heidelberg
             </a>
-            <span>|</span>
-            <span>Philosophische Fakultät</span>
           </div>
           <div className="flex items-center space-x-4">
             <button 
