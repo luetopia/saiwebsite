@@ -52,6 +52,96 @@ export const newsItems: NewsItem[] = [
     image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
     featured: false,
     tags: ["DFG", "Klimawandel", "Migration"]
+  },
+  {
+    id: 4,
+    title: "Prof. Dr. Rajesh Patel erhält Humboldt-Forschungspreis",
+    summary: "Die Alexander von Humboldt-Stiftung würdigt damit seine herausragenden Beiträge zur Erforschung der modernen südasiatischen Literatur.",
+    date: "18. Oktober 2024",
+    author: "Pressestelle SAI",
+    category: "Auszeichnungen",
+    departments: ["modern-south-asian-studies"],
+    image: "https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Humboldt", "Auszeichnung", "Literatur"]
+  },
+  {
+    id: 5,
+    title: "Neue Publikationsreihe 'Südasien Digital' gestartet",
+    summary: "Das SAI lanciert eine innovative Open-Access-Publikationsreihe, die sich den Digital Humanities in der Südasienforschung widmet.",
+    date: "12. Oktober 2024",
+    author: "Dr. Sarah Weber",
+    authorId: 3,
+    category: "Publikationen",
+    departments: ["modern-south-asian-studies", "history"],
+    image: "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Digital Humanities", "Open Access", "Publikation"]
+  },
+  {
+    id: 6,
+    title: "Studentische Forschungsgruppe bei internationalem Wettbewerb erfolgreich",
+    summary: "Eine Gruppe von SAI-Studierenden belegt den ersten Platz beim 'Asian Studies Competition' der European Association for Asian Studies.",
+    date: "05. Oktober 2024",
+    author: "Laura Becker, M.A.",
+    authorId: 7,
+    category: "Auszeichnungen",
+    departments: ["ethnology"],
+    image: "https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Studierende", "Wettbewerb", "Erfolg"]
+  },
+  {
+    id: 7,
+    title: "Neue Erkenntnisse zur Bhakti-Bewegung in Maharashtra",
+    summary: "Dr. Priya Sharma präsentiert bahnbrechende Forschungsergebnisse zur regionalen Ausprägung der Bhakti-Tradition.",
+    date: "20. November 2024",
+    author: "Dr. Priya Sharma",
+    authorId: 5,
+    category: "Forschung",
+    departments: ["cultural-religious-history"],
+    image: "https://images.pexels.com/photos/3760613/pexels-photo-3760613.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Bhakti", "Maharashtra", "Religion"]
+  },
+  {
+    id: 8,
+    title: "Digitalisierung mittelalterlicher Handschriften abgeschlossen",
+    summary: "Das Projekt zur Digitalisierung von 500 Sanskrit-Handschriften wurde erfolgreich beendet.",
+    date: "12. November 2024",
+    author: "Thomas Hoffmann",
+    authorId: 8,
+    category: "Digitalisierung",
+    departments: ["cultural-religious-history"],
+    image: "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Digitalisierung", "Handschriften", "Sanskrit"]
+  },
+  {
+    id: 9,
+    title: "Neue Feldforschung in den Stammesgebieten Odishas",
+    summary: "Prof. Dr. Anita Gupta startet ein dreijähriges Forschungsprojekt zu den kulturellen Praktiken der Kondh-Gemeinschaft.",
+    date: "15. November 2024",
+    author: "Prof. Dr. Anita Gupta",
+    authorId: 9,
+    category: "Feldforschung",
+    departments: ["ethnology"],
+    image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Feldforschung", "Odisha", "Stammeskulturen"]
+  },
+  {
+    id: 10,
+    title: "Neue Satellitendaten zeigen dramatischen Gletscherschwund im Himalaya",
+    summary: "Dr. Thomas Weber präsentiert alarmierende Ergebnisse zur Gletscherschmelze in der Himalaya-Region.",
+    date: "25. November 2024",
+    author: "Dr. Thomas Weber",
+    authorId: 15,
+    category: "Klimaforschung",
+    departments: ["geography"],
+    image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false,
+    tags: ["Gletscher", "Himalaya", "Klimawandel"]
   }
 ];
 

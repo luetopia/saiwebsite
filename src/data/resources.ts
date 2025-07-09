@@ -135,6 +135,132 @@ export const resources: Resource[] = [
     access: "Registriert",
     departments: ["political-science"],
     tags: ["Politik", "Wahlen", "Daten"]
+  },
+  {
+    id: 15,
+    title: "Kastensystem-Forschungstools",
+    description: "Methodische Werkzeuge und Fragebögen für die Kastenforschung",
+    type: "Toolkit",
+    access: "Registriert",
+    departments: ["ethnology"],
+    tags: ["Kastensystem", "Forschung", "Methoden"]
+  },
+  {
+    id: 16,
+    title: "Ethnographische Methoden Handbuch",
+    description: "Leitfaden für ethnographische Feldforschung in Südasien",
+    type: "Handbuch",
+    access: "Öffentlich",
+    departments: ["ethnology"],
+    tags: ["Ethnographie", "Methoden", "Feldforschung"]
+  },
+  {
+    id: 17,
+    title: "Sufistische Texte Portal",
+    description: "Mehrsprachige Sammlung sufistischer Literatur aus Südasien",
+    type: "Portal",
+    access: "Öffentlich",
+    departments: ["cultural-religious-history"],
+    tags: ["Sufismus", "Texte", "Islam"]
+  },
+  {
+    id: 18,
+    title: "Buddhistische Studien Toolkit",
+    description: "Forschungstools und Methoden für buddhistische Studien",
+    type: "Toolkit",
+    access: "Intern",
+    departments: ["cultural-religious-history"],
+    tags: ["Buddhismus", "Forschung", "Tools"]
+  },
+  {
+    id: 19,
+    title: "Handelspolitik-Analysewerkzeuge",
+    description: "Software und Modelle zur Analyse von Handelspolitik und -auswirkungen",
+    type: "Software",
+    access: "Intern",
+    departments: ["development-economics"],
+    tags: ["Handel", "Politik", "Analyse"]
+  },
+  {
+    id: 20,
+    title: "Entwicklungsökonomie Methodenhandbuch",
+    description: "Leitfaden für empirische Methoden in der Entwicklungsökonomie",
+    type: "Handbuch",
+    access: "Öffentlich",
+    departments: ["development-economics"],
+    tags: ["Methoden", "Entwicklung", "Ökonomie"]
+  },
+  {
+    id: 21,
+    title: "Südasien Klimadatenbank",
+    description: "Umfassende Sammlung meteorologischer und klimatologischer Daten",
+    type: "Datenbank",
+    access: "Registriert",
+    departments: ["geography"],
+    tags: ["Klima", "Meteorologie", "Daten"]
+  },
+  {
+    id: 22,
+    title: "Fernerkundungs-Toolkit",
+    description: "Software und Methoden für die Analyse von Satellitendaten",
+    type: "Software",
+    access: "Intern",
+    departments: ["geography"],
+    tags: ["Fernerkundung", "Satelliten", "Analyse"]
+  },
+  {
+    id: 23,
+    title: "Südasiatische Chronologie",
+    description: "Interaktive Zeitleiste der südasiatischen Geschichte",
+    type: "Portal",
+    access: "Öffentlich",
+    departments: ["history"],
+    tags: ["Chronologie", "Geschichte", "Zeitleiste"]
+  },
+  {
+    id: 24,
+    title: "Historische Karten Südasiens",
+    description: "Sammlung historischer und thematischer Karten",
+    type: "Portal",
+    access: "Intern",
+    departments: ["history"],
+    tags: ["Karten", "Geschichte", "Geographie"]
+  },
+  {
+    id: 25,
+    title: "Literaturanalyse-Tools",
+    description: "Software für die computergestützte Analyse literarischer Texte",
+    type: "Software",
+    access: "Intern",
+    departments: ["modern-south-asian-studies"],
+    tags: ["Literatur", "Analyse", "Software"]
+  },
+  {
+    id: 26,
+    title: "Übersetzungsdatenbank",
+    description: "Sammlung von Übersetzungen südasiatischer Literatur",
+    type: "Datenbank",
+    access: "Öffentlich",
+    departments: ["modern-south-asian-studies"],
+    tags: ["Übersetzung", "Literatur", "Mehrsprachig"]
+  },
+  {
+    id: 27,
+    title: "Medienanalyse-Tools",
+    description: "Software zur Analyse politischer Kommunikation in sozialen Medien",
+    type: "Software",
+    access: "Intern",
+    departments: ["political-science"],
+    tags: ["Medien", "Politik", "Analyse"]
+  },
+  {
+    id: 28,
+    title: "Governance-Indikatoren Portal",
+    description: "Interaktive Plattform für Governance-Messungen und -vergleiche",
+    type: "Portal",
+    access: "Öffentlich",
+    departments: ["political-science"],
+    tags: ["Governance", "Indikatoren", "Vergleich"]
   }
 ];
 
